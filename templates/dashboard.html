@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}AQI Forecast — Dashboard{% endblock %}
+
+{% block content %}
+<section class="controls">
+  <label for="city-input">City</label>
+  <input id="city-input" type="text" value="{{ default_city }}" />
+  <button id="load-btn">Load</button>
+</section>
+
+<section class="current-card" id="current-card">
+  <div class="current-left">
+    <div class="aqi-value" id="aqi-value">--</div>
+    <div class="aqi-category" id="aqi-category">Loading…</div>
+  </div>
+  <div class="current-right">
+    <p id="aqi-advisory">Fetching current air quality…</p>
+    <p class="dominant" id="dominant-pollutant"></p>
+    <p class="timestamp" id="reading-timestamp"></p>
+  </div>
+</section>
+
+<section class="grid-2">
+  <div class="panel">
+    <h2>7-Day Forecast</h2>
+    <canvas id="forecast-chart" height="220"></canvas>
+  </div>
+  <div class="panel">
+    <h2>30-Day History</h2>
+    <canvas id="history-chart" height="220"></canvas>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>Alerts</h2>
+  <div class="subscribe-row">
+    <input id="email-input" type="email" placeholder="you@example.com" />
+    <input id="threshold-input" type="number" value="150" min="0" max="500" />
+    <button id="subscribe-btn">Subscribe to alerts</button>
+    <span id="subscribe-status"></span>
+  </div>
+  <ul id="alerts-list" class="alerts-list"></ul>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}
