@@ -85,9 +85,6 @@ cross-validated MAE/RMSE/MAPE so you can gauge forecast quality before deploying
 python app.py
 ```
 
-Visit `http://localhost:5000`. The background scheduler (APScheduler) starts
-automatically and ingests one fresh reading every `FETCH_INTERVAL_MINUTES` (default 60).
-
 ## Switching to a live data source
 
 By default `AQI_DATA_SOURCE=mock` in `.env`. To go live:
