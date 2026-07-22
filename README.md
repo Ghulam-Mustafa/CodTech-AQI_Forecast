@@ -1,4 +1,4 @@
-# AQI Forecast — Air Quality Index Forecasting Web App
+# AQI Forecast — Air Quality Index Forecasting Web App(Intern ID : CITS7455)
 
 A Flask-based web application that displays current Air Quality Index (AQI) readings
 and forecasts the next 5–7 days using a hybrid machine learning model (gradient-boosted
